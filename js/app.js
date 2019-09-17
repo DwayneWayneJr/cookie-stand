@@ -3,7 +3,7 @@
 var storeHrs = ['6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm', '8:00 pm'];
 
 //storeArray
-// var storeArray = [seattle, tokyo, three, four, five];
+// var storeArray = [seattle, tokyo, dubai, paris, lima];
 
 var seattle = {
   name: 'Seattle',
@@ -27,7 +27,7 @@ var seattle = {
   },
 };
 seattle.calcCookieSold();
-console.log(seattle)
+console.log(seattle);
 
 // Randon number function
 function randoNum(min, max) {
@@ -77,7 +77,7 @@ var tokyo = {
   },
 };
 tokyo.calcCookieSold();
-console.log(tokyo)
+console.log(tokyo);
 
 // Randon number function
 function randoNum(min, max) {
@@ -127,7 +127,7 @@ var dubai = {
   },
 };
 dubai.calcCookieSold();
-console.log(tokyo)
+console.log(tokyo);
 
 // Randon number function
 function randoNum(min, max) {
@@ -155,27 +155,102 @@ function domManip(object) {
 dubai.renderName();
 domManip(dubai);
 
-//  var four = {
-//    name: 'Paris',
-//    minCustHr: 20,
-//    maxCustHr: 38,
-//    avgCookieHr: 2.3,
-//  }
+var paris = {
+  name: 'Paris',
+  minCustHr: 20,
+  maxCustHr: 38,
+  avgCookieSale: 2.3,
+  salesPerHr: [],
+  totalCookies: 0,
+  calcCookieSold: function () {
+    for (var i = 0; i < storeHrs.length; i++) {
+      var cookies = Math.floor(randoNum(this.minCustHr, this.maxCustHr) * this.avgCookieSale);
+      this.totalCookies += cookies;
+      this.salesPerHr.push(cookies);
+    }
+  },
+  renderName: function () {
+    var nameProp = document.getElementById('storeContainer');
+    var ulElement = document.createElement('ul');
+    ulElement.textContent = `${this.name}`;
+    nameProp.appendChild(ulElement);
+  },
+};
+paris.calcCookieSold();
+console.log(paris);
 
-//  var five = {
-//    name: 'Lima',
-//    minCustHr: 2,
-//    maxCustHr: 16,
-//    avgCookieHr: 4.6,
-//  }
+// Randon number function
+function randoNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(randoNum(2, 7));
+
+
+function domManip(object) {
+  var parentContainer = document.getElementById('storeContainer');
+  var ulElement = document.createElement('ul');
+  for (var i = 0; i < storeHrs.length; i++) {
+    var liElement = document.createElement('li');
+    liElement.textContent = `${storeHrs[i]}: ${object.salesPerHr[i]} cookies`;
+    ulElement.appendChild(liElement);
+  }
+  liElement = document.createElement('li');
+  liElement.textContent = `Total Cookies: ${object.totalCookies}`;
+  ulElement.appendChild(liElement);
+  parentContainer.appendChild(ulElement);
+}
 
 
 
+paris.renderName();
+domManip(paris);
 
-//  //forLoop for store...got home and completley forgot my logic here...pleh
-// //  for(var i = 0; i < storeArray.length; i++){
-// //    var storeHrs = document.createElement('ul');
-// //    for (var i = 0; i < storeHrs.length; i++){
-// //      storeHrs[i].salesPerHr.push(parseInt(storeHrs[i].returnRandom() * storeHrs[i].avgCookieHr));
+var lima = {
+  name: 'Lima',
+  minCustHr: 2,
+  maxCustHr: 16,
+  avgCookieSale: 4.6,
+  salesPerHr: [],
+  totalCookies: 0,
+  calcCookieSold: function () {
+    for (var i = 0; i < storeHrs.length; i++) {
+      var cookies = Math.floor(randoNum(this.minCustHr, this.maxCustHr) * this.avgCookieSale);
+      this.totalCookies += cookies;
+      this.salesPerHr.push(cookies);
+    }
+  },
+  renderName: function () {
+    var nameProp = document.getElementById('storeContainer');
+    var ulElement = document.createElement('ul');
+    ulElement.textContent = `${this.name}`;
+    nameProp.appendChild(ulElement);
+  },
+};
+lima.calcCookieSold();
+console.log(lima);
 
-//  } 
+// Randon number function
+function randoNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(randoNum(2, 7));
+
+
+function domManip(object) {
+  var parentContainer = document.getElementById('storeContainer');
+  var ulElement = document.createElement('ul');
+  for (var i = 0; i < storeHrs.length; i++) {
+    var liElement = document.createElement('li');
+    liElement.textContent = `${storeHrs[i]}: ${object.salesPerHr[i]} cookies`;
+    ulElement.appendChild(liElement);
+  }
+  liElement = document.createElement('li');
+  liElement.textContent = `Total Cookies: ${object.totalCookies}`;
+  ulElement.appendChild(liElement);
+  parentContainer.appendChild(ulElement);
+}
+
+
+
+lima.renderName();
+domManip(lima);
