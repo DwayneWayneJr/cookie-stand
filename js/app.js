@@ -94,7 +94,7 @@ PatsStore.prototype.renderFooterRow = function () {
 };
 
 function initiateExistingShop() {
-  // var seattle = 
+  // var seattle =
   new PatsStore('Seattle', 23, 65, 6.3);
   new PatsStore('Tokyo', 3, 24, 1.2);
   new PatsStore('Dubai', 11, 38, 3.7);
@@ -106,3 +106,14 @@ function initiateExistingShop() {
 initiateExistingShop();
 
 PatsStore.prototype.renderFooterRow();
+
+
+var allStores = [];
+
+function PatsStore(locationName, minimumCustomer, maximumCustomer, averageCookieSalePerCustomer) {
+  this.locationName = locationName;
+  this.minimumCustomer = minimumCustomer;
+  this.maximumCustomer = maximumCustomer;
+  this.averageCookieSalePerCustomer = averageCookieSalePerCustomer;
+  allStores.push(this);
+}
