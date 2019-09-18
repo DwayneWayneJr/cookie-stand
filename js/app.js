@@ -13,6 +13,7 @@ function City(nameCity, minCustHr, maxCustHr, avgCookieSale) {
   this.salesPerHr = [];
   this.totalCookies = 0;
   City.storeArray.push(this);
+
   this.calcCookieSold = function() {
     for (var i = 0; i < storeHrs.length; i++) {
       var cookies = Math.floor(randoNum(this.minCustHr, this.maxCustHr) * this.avgCookieSale);
@@ -48,6 +49,7 @@ function domManip(object) {
   var ulElement = document.createElement('ul');
   for (var i = 0; i < storeHrs.length; i++) {
     var liElement = document.createElement('li');
+    // console.log(object.salesPerHr);
     liElement.textContent = `${storeHrs[i]}: ${object.salesPerHr[i]} cookies`;
     ulElement.appendChild(liElement);
   }
@@ -58,6 +60,7 @@ function domManip(object) {
 }
 // var seattle = new City('Seattle', '23', '65', '6.3');
 seattle.renderName();
+seattle.calcCookieSold();
 domManip(seattle);
 
 
