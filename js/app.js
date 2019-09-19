@@ -118,8 +118,8 @@ function PatsAddNew(locationName, minimumCustomer, maximumCustomer, averageCooki
   PatsAddNew.allPatsStores.push(this);
 }
 
-new PatsStore('Miami', 10, 100, 5);
-new PatsStore('Harlem', 5, 50, 2.5);
+// new PatsStore('Miami', 10, 100, 5);
+// new PatsStore('Harlem', 5, 50, 2.5);
 
 console.log('allStores: ', allPatsStores);
 
