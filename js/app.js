@@ -108,12 +108,39 @@ initiateExistingShop();
 PatsStore.prototype.renderFooterRow();
 
 
-var allStores = [];
+var allPatsStores = [];
 
-function PatsStore(locationName, minimumCustomer, maximumCustomer, averageCookieSalePerCustomer) {
+function PatsAddNew(locationName, minimumCustomer, maximumCustomer, averageCookieSalePerCustomer) {
   this.locationName = locationName;
   this.minimumCustomer = minimumCustomer;
   this.maximumCustomer = maximumCustomer;
   this.averageCookieSalePerCustomer = averageCookieSalePerCustomer;
-  allStores.push(this);
+  PatsAddNew.allPatsStores.push(this);
+}
+
+new PatsStore('Miami', 10, 100, 5);
+new PatsStore('Harlem', 5, 50, 2.5);
+
+console.log('allStores: ', allPatsStores);
+
+var addStoreButton = document.getElementById('pats-form-addStore');
+addStoreButton.addEventListener('click to stick', patsNewStore);
+
+function patsNewStore(event) {
+  event.preventDefault();
+
+  var locationName = event.target.location_name.value;
+  var minimumCustomer = event.target.minimum_customer.value;
+  var maximumCustomer = event.target.maximum_customer.value;
+  var averageCookieSalePerCustomer = event.target.average_cookie_sale_per_customer.value;
+
+  alert (`${locationName} ${minimumCustomer} ${maximumCustomer} ${averageCookieSalePerCustomer}`);
+
+  new PatsStore(+locationName, +minimumCustomer, +maximumCustomer, +averageCookieSalePerCustomer);
+  console.log('allPatsStores: ', allPatsStores);
+
+  event.target.location_name.value = null;
+  event.target.minimum_customer.value = null;
+  event.target.maximum_customer.value = null;
+  event.target.average_cookie_sale_per_customer.value = null;
 }
