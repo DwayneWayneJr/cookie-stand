@@ -1,3 +1,16 @@
+* {
+  outline: 1px dotted red;
+}
+
+header {
+   color:tan;
+   background: teal;
+   font-size: 28px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body {
+  background: salmon;
+}
 table, th, td {
   border: 1px solid black;
   }
