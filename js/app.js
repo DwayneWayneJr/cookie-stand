@@ -1,3 +1,4 @@
+'use strict';
 
 PatsStore.Hours = ['0600', '0700', '0800', '0900', '1000', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2000'];
 
@@ -94,50 +95,42 @@ PatsStore.prototype.renderFooterRow = function () {
 };
 
 function initiateExistingShop() {
-  // var seattle =
   new PatsStore('Seattle', 23, 65, 6.3);
   new PatsStore('Tokyo', 3, 24, 1.2);
   new PatsStore('Dubai', 11, 38, 3.7);
   new PatsStore('Paris', 20, 38, 2.3);
   new PatsStore('Lima', 2, 16, 4.6);
-  // console.log(seattle);
 }
 
 initiateExistingShop();
 
 PatsStore.prototype.renderFooterRow();
 
+// storeTableData.removeChild(storeTableData.lastChild);
+// new PatsStore('Miami', 10, 100, 5);
+// new PatsStore('Harlem', 5, 50, 2.5);
+// PatsStore.prototype.renderFooterRow();
 
-var allPatsStores = [];
-
-function PatsAddNew(locationName, minimumCustomer, maximumCustomer, averageCookieSalePerCustomer) {
-  this.locationName = locationName;
-  this.minimumCustomer = minimumCustomer;
-  this.maximumCustomer = maximumCustomer;
-  this.averageCookieSalePerCustomer = averageCookieSalePerCustomer;
-  PatsAddNew.allPatsStores.push(this);
-}
-
-new PatsStore('Miami', 10, 100, 5);
-new PatsStore('Harlem', 5, 50, 2.5);
-
-console.log('allStores: ', allPatsStores);
+console.log('allStores: ', PatsStore.allStores);
 
 var addStoreButton = document.getElementById('pats-form-addStore');
-addStoreButton.addEventListener('click to stick', patsNewStore);
+addStoreButton.addEventListener('submit', patsNewStore);
 
-function patsNewStore(event) {
+function patsNewStore() {
   event.preventDefault();
+  console.log('event.target.location_name.value', event.target.location_name.value);
+
 
   var locationName = event.target.location_name.value;
   var minimumCustomer = event.target.minimum_customer.value;
   var maximumCustomer = event.target.maximum_customer.value;
   var averageCookieSalePerCustomer = event.target.average_cookie_sale_per_customer.value;
 
-  alert (`${locationName} ${minimumCustomer} ${maximumCustomer} ${averageCookieSalePerCustomer}`);
+  console.log(locationName, minimumCustomer, maximumCustomer, averageCookieSalePerCustomer);
 
-  new PatsStore(+locationName, +minimumCustomer, +maximumCustomer, +averageCookieSalePerCustomer);
-  console.log('allPatsStores: ', allPatsStores);
+  storeTableData.removeChild(storeTableData.lastChild);
+  new PatsStore(locationName, minimumCustomer, maximumCustomer, averageCookieSalePerCustomer);
+  PatsStore.prototype.renderFooterRow();
 
   event.target.location_name.value = null;
   event.target.minimum_customer.value = null;
