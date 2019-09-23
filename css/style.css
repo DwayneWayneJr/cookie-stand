@@ -1,16 +1,126 @@
-* {
+/* * {
   outline: 1px dotted red;
-}
+} */
 
-header {
-   color:tan;
-   background: teal;
-   font-size: 28px;
-   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
+/*HEADER*/
+
 body {
   background: salmon;
 }
-table, th, td {
-  border: 1px solid black;
-  }
+
+header {
+  height: 120px;
+  background-color:teal;
+  color: tan;
+  font-size: 36px;
+  font-family: 'Courgette', cursive;
+}
+
+h1 {
+  margin-left: 20px;
+}
+nav {
+  width: 960px;
+  height: 120px;
+  color: tan
+}
+
+header img {
+  float: left;
+  width: 200px;
+  height: 70px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+}
+
+header ul li {
+  display: inline-block;
+  margin-top: 40px;
+  margin-right: 50px;
+}
+
+a {
+  color: tan;
+  text-decoration: none;
+}
+
+/*Main Section image column*/
+
+main {
+  width: 960px;
+  margin: 30px auto;
+}
+
+main ul li {
+  list-style: none;
+  float: left;
+  margin: 30px 30px 30px 0px;
+}
+
+main ul li:last-child {
+  margin-right: 0px;
+}
+
+.items {
+  width: 300px;
+  height: 375px;
+}
+/*MAIN - Featured Section*/
+
+#big {
+  width: 480px;
+  height: 400px;
+}
+
+section img {
+  float: left;
+}
+
+section div {
+  width: calc(50% - 30px);
+  float: left;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 10px;
+}
+
+section div p {
+  height: 320px;
+  overflow: auto;
+  font-size: 18px;
+  line-height: 24px;
+  font-style: italic;
+}
+
+button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+  padding: 10px 30px;
+  color: salmon;
+  border-radius: 3px;
+  font-size: 18px;
+  margin-top: 10px;
+  transition: 350ms;
+  cursor: pointer;
+}
+
+button:hover {
+  background: teal;
+}
+
+/*Footer */
+
+footer {
+  background: teal;
+  height: 150px;
+  clear: both;
+}
+
+#footerpic {
+  height: 150px;
+}
