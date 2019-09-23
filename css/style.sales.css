@@ -1,0 +1,104 @@
+/* * {
+  outline: 1px dotted red;
+} */
+
+/* Header */
+header {
+  height: 120px;
+   background: teal;
+   color:tan;
+   font-size: 36px;
+  font-family: 'Courgette', cursive;
+}
+
+h1 {
+margin-left: 20px;
+}
+
+nav {
+  width: 960px;
+  height: 120px;
+  color: tan;
+}
+
+header img {
+  float: left;
+  width: 200px;
+  height: 70px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+}
+
+header ul li {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+a {
+  color: tan;
+  text-decoration: none;
+}
+
+body {
+  background: salmon;
+}
+
+h4 {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  color: whitesmoke;
+  font-size: 28px;
+  font-family: 'Amaranth', sans-serif;
+}
+
+table{
+  width: 700px;
+  height: 250px;
+}
+
+table, th {
+  border: 3px solid tan;
+  text-align: left;
+  font-size: 24px;
+  font-family: 'Lekton', sans-serif;
+}
+
+table, td {
+  margin-top: 2px;
+  background: teal;
+  border: 3px solid tan;
+  color:whitesmoke;
+  font-size: 14px;
+  font-family: 'Lekton', sans-serif;
+  }
+
+  form {
+    width: 500px;
+    height: 250px;
+    border: 3px solid tan;
+    background: teal;
+    color: tan;
+    margin-top: 5px;
+    font-size: 18px;
+    font-family: 'Amaranth', sans-serif;
+  }
+
+  button {
+    border: none;
+    padding: 10px 30px;
+    color: teal;
+    border-radius: 3px;
+    font-size: 18px;
+    font-family: 'Lekton', sans-serif;
+    margin-top: 10px;
+    transition: 350ms;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: salmon;
+  }
